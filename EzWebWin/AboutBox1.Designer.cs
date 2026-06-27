@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox1));
             tableLayoutPanel = new TableLayoutPanel();
             logoPictureBox = new PictureBox();
             labelProductName = new Label();
@@ -99,7 +100,7 @@
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(361, 26);
             labelVersion.TabIndex = 0;
-            labelVersion.Text = "V1.0.0";
+            labelVersion.Text = "V1.0.1";
             labelVersion.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labelCopyright
@@ -150,6 +151,7 @@
             okButton.Size = new Size(100, 34);
             okButton.TabIndex = 24;
             okButton.Text = "&OK";
+            okButton.Click += okButton_Click;
             // 
             // AboutBox1
             // 
@@ -159,12 +161,12 @@
             ClientSize = new Size(580, 435);
             Controls.Add(tableLayoutPanel);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "AboutBox1";
             Padding = new Padding(12, 14, 12, 14);
-            ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "About EzWeb";

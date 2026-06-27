@@ -12,7 +12,7 @@ namespace EzWebWin
         public AboutBox1()
         {
             InitializeComponent();
-    
+
         }
 
         #region Assembly Attribute Accessors
@@ -98,6 +98,11 @@ namespace EzWebWin
         private void AboutBox1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

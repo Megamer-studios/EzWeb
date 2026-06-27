@@ -41,7 +41,7 @@
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
             textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Size = new Size(738, 209);
+            textBox1.Size = new Size(874, 310);
             textBox1.TabIndex = 0;
             textBox1.Text = resources.GetString("textBox1.Text");
             // 
@@ -49,7 +49,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(738, 209);
+            ClientSize = new Size(874, 310);
             Controls.Add(textBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Info";

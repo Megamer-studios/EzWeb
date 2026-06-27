@@ -54,7 +54,10 @@ namespace EzWebWin
                 hosting = true;
                 numericUpDown2.Enabled = false;
                 button1.Enabled = false;
+                button2.Enabled = false;
                 button3.Enabled = true;
+
+
                 while (hosting)
                 {
 
@@ -63,92 +66,178 @@ namespace EzWebWin
                     HttpListenerResponse response = context.Response;
                     string path = request.Url.AbsolutePath;
                     string rootFolder = folderBrowserDialog1.SelectedPath;
-
-
+                    string deniedPath = Path.Combine(rootFolder, "DeniedPaths.txt");
                     string templatePath = Path.Combine(rootFolder, "layout.html");
                     string notFoundPath = Path.Combine(rootFolder, "notFound.html");
+                    string accessDeniedPath = Path.Combine(rootFolder, "accessDenied.html");
+                    List<string> deniedPaths = new List<string>();
+                    if (File.Exists(deniedPath))
+                    {
+
+                        deniedPaths = File.ReadAllLines(deniedPath).ToList();
+                    }
+
+
+
+
+
+
 
                     string targetFilePath;
                     string targetedFilePath;
-                    if (path == "/")
+                    if (!deniedPaths.Contains(path))
                     {
-                        targetFilePath = Path.Combine(rootFolder, "index.html");
-                        targetedFilePath = targetFilePath;
+
+                        if (path == "/")
+                        {
+                            targetFilePath = Path.Combine(rootFolder, "index.html");
+                            targetedFilePath = targetFilePath;
+                        }
+                        else if (path == "/DeniedPaths.txt")
+                        {
+                            targetFilePath = accessDeniedPath;
+                            targetedFilePath = targetFilePath;
+                        }
+                        else
+                        {
+                            targetFilePath = Path.Combine(rootFolder, path.TrimStart('/'));
+                            targetedFilePath = targetFilePath;
+
+                            if (!File.Exists(targetFilePath) && File.Exists(targetFilePath + ".html"))
+                            {
+
+                                targetFilePath += ".html";
+                                targetedFilePath = targetFilePath;
+                            }
+                        }
                     }
                     else
                     {
-                        targetFilePath = Path.Combine(rootFolder, path.TrimStart('/'));
+                        targetFilePath = accessDeniedPath;
                         targetedFilePath = targetFilePath;
-
-                        if (!File.Exists(targetFilePath) && string.IsNullOrEmpty(Path.GetExtension(targetFilePath)))
-                        {
-                            targetFilePath += ".html";
-                            targetedFilePath = targetFilePath;
-                        }
                     }
 
                     string pageContent = "";
                     string webContent = "";
                     string extension = Path.GetExtension(targetedFilePath).ToLower();
                     byte[] buffer;
-                    if (extension == ".html")
+                    try
                     {
-                        try
+
+
+                        if (extension == ".html")
                         {
-                            string layoutText = File.ReadAllText(templatePath);
 
-                            if (targetedFilePath != templatePath)
+                            try
                             {
-                                if (File.Exists(targetedFilePath))
-                                {
-                                    pageContent = File.ReadAllText(targetedFilePath);
+                                string layoutText = File.ReadAllText(templatePath);
 
-                                }
-                                else if (File.Exists(notFoundPath))
+                                if (targetedFilePath != templatePath)
                                 {
-                                    pageContent = File.ReadAllText(notFoundPath);
-                                    response.StatusCode = 404;
+                                    if (File.Exists(targetedFilePath))
+                                    {
+                                        pageContent = File.ReadAllText(targetedFilePath);
+
+                                    }
+                                    else if (File.Exists(notFoundPath))
+                                    {
+                                        pageContent = File.ReadAllText(notFoundPath);
+                                        response.StatusCode = 404;
+                                    }
+                                    else
+                                    {
+                                        pageContent = "<h1>404 Not Found</h1>";
+                                        response.StatusCode = 404;
+                                    }
                                 }
                                 else
                                 {
-                                    pageContent = "<h1>404 Not Found</h1>";
+                                    pageContent = File.ReadAllText(notFoundPath);
+                                }
+
+
+
+
+
+
+
+                            }
+                            catch (Exception ex)
+                            {
+                                webContent = $"<h1>Internal Server Error</h1><p>{ex.Message}</p>";
+                                newLine($"Error reading files: {ex.Message}");
+                            }
+                            if (File.Exists(templatePath))
+                            {
+                                webContent = File.ReadAllText(templatePath).Replace("{WebContent}", pageContent);
+                            }
+                            else
+                            {
+                                webContent = pageContent;
+                            }
+                            buffer = System.Text.Encoding.UTF8.GetBytes(webContent);
+                            response.ContentType = "text/html";
+                        }
+                        else
+                        {
+                           
+
+                            buffer = File.ReadAllBytes(targetedFilePath);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        if (ex.Message.Contains("Could not find file"))
+                        {
+                            if (!File.Exists(targetedFilePath) )
+                            {
+                                if (File.Exists(templatePath))
+                                {
+
+
+                                    if (File.Exists(notFoundPath))
+                                    {
+                                        pageContent = File.ReadAllText(notFoundPath);
+                                        response.StatusCode = 404;
+
+                                    }
+                                    else
+                                    {
+                                        pageContent = "<h1>404 Not Found</h1>";
+                                        response.StatusCode = 404;
+                                    }
+                                    webContent = File.ReadAllText(templatePath).Replace("{WebContent}", pageContent);
+                                    buffer = System.Text.Encoding.UTF8.GetBytes(webContent);
+                                    response.ContentType = "text/html";
+                                }
+                                else
+                                {
+
+                                    webContent = "<h1>404 Not Found</h1>";
                                     response.StatusCode = 404;
+                                    buffer = System.Text.Encoding.UTF8.GetBytes(webContent);
+                                    response.ContentType = "text/html";
                                 }
                             }
                             else
                             {
-                                pageContent = File.ReadAllText(notFoundPath);
+                                webContent = $"<h1>Internal Server Error</h1><p>{ex.Message}</p>";
+                                buffer = System.Text.Encoding.UTF8.GetBytes(webContent);
+                                response.ContentType = "text/html";
                             }
-
-
-
-
-
-
-
-                        }
-                        catch (Exception ex)
-                        {
-                            webContent = $"<h1>Internal Server Error</h1><p>{ex.Message}</p>";
-                            newLine($"Error reading files: {ex.Message}");
-                        }
-                        if (File.Exists(templatePath))
-                        {
-                            webContent = File.ReadAllText(templatePath).Replace("{WebContent}", pageContent);
                         }
                         else
                         {
-                            webContent = pageContent;
+                            webContent = $"<h1>Internal Server Error</h1><p>{ex.Message}</p>";
+                            buffer = System.Text.Encoding.UTF8.GetBytes(webContent);
+                            response.ContentType = "text/html";
+                            newLine($"Error: {ex.Message}");
                         }
-                        buffer = System.Text.Encoding.UTF8.GetBytes(webContent);
-                        response.ContentType = "text/html";
-                    }
-                    else
-                    {
-                        buffer = File.ReadAllBytes(targetedFilePath);
-                    }
 
 
+                   
+                    }
 
 
 
@@ -178,6 +267,7 @@ namespace EzWebWin
 
 
 
+
                     response.ContentLength64 = buffer.Length;
 
                     System.IO.Stream output = response.OutputStream;
@@ -201,6 +291,7 @@ namespace EzWebWin
         {
             numericUpDown2.Enabled = true;
             button1.Enabled = true;
+            button2.Enabled = true;
             button3.Enabled = false;
             hosting = false;
             listener.Stop();
@@ -218,6 +309,11 @@ namespace EzWebWin
         {
             Info info = new Info();
             info.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

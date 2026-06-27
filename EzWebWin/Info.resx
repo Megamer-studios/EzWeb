@@ -123,11 +123,16 @@
 -index.html
 -layout.html
 -notFound.html
+-DeniedPaths.txt
+-accessDenied.html
 
 All the layout and the &lt;head&gt; information (except for title) should be in layout.html.
 Inside the &lt;body&gt; of layout.html insert "{WebContent}" to declare where the page content goes.
 Inside page files (including not Found.html) start off by opening a &lt;head&gt; tag and declaring the &lt;title&gt;.
-Outside of the head tag you can add, what you would normally add inside the &lt;body&gt; of that page.</value>
+Outside of the head tag you can add, what you would normally add inside the &lt;body&gt; of that page.
+To override the layout, you can simply remove the "html" file extension from a page.
+To restrict users from accessing a file, you can add the path to a new line in "DeniedPaths.txt".
+In the "accessDenied.html" and "notFound.html" files you can define your own "page not found" and "access denied" pages.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
