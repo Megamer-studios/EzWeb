@@ -1,39 +1,151 @@
+<div align="center">
 
 # EzWeb
 
+**Web hosting done simple.**
 
-## !DISCLAIMER!
+*A lightweight Windows hosting tool that lets developers share a single layout across plain HTML websites.*
 
-THE SOFTWARE WILL ONLY WORK IN ADMINISTRATOR MODE!
----
+[![License](https://img.shields.io/badge/license-Open%20Source-brightgreen)](https://relax-listed-nursing-flights.trycloudflare.com/source)
+[![Version](https://img.shields.io/badge/version-1.0.1-blue)](https://relax-listed-nursing-flights.trycloudflare.com/Compiles/EzWeb-V1.0.1.zip)
+[![Contributions](https://img.shields.io/badge/contributions-open-orange)](https://relax-listed-nursing-flights.trycloudflare.com/source)
+[![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)](https://relax-listed-nursing-flights.trycloudflare.com/downloads)
 
-EzWeb is a hosting tool, that allows developers to use
-a shared layout in plain HTML websites.
-
----
-
-You need 5 main files.
-
--index.html
--layout.html
--notFound.html
--DeniedPaths.txt
--accessDenied.html
-
-All the layout and the <head> information
-(except for title) should be in layout.html.
-Inside the <body> of layout.html insert "{WebContent}"
-to declare where the page content goes.
-Inside page files (including not Found.html) start off
-by opening a <head> tag and declaring the <title>.
-Outside of the head tag you can add, what you would
-normally add inside the <body> of that page.
-To override the layout, you can simply remove the
-"html" file extension from a page.
-To restrict users from accessing a file, you can add
-the path to a new line in "DeniedPaths.txt".
-In the "accessDenied.html" and "notFound.html" files you
-can define your own "page not found" and
-"access denied" pages.
+</div>
 
 ---
+
+## What is EzWeb?
+
+EzWeb is a Windows desktop tool that runs a local HTTP server, automatically injecting a shared `layout.html` into every page of your static website. Write your content in plain HTML files — EzWeb handles the wrapper so you never repeat your navigation, header, or footer again.
+
+---
+
+## ⚠️ Requirements
+
+> **EzWeb must be run in Administrator mode.**
+> The HTTP listener requires elevated privileges to bind to a port. Right-click the executable and choose *Run as administrator*.
+
+---
+
+## Download
+
+| Version | Link |
+|---------|------|
+| **V1.0.1** *(Latest)* | [Download](https://relax-listed-nursing-flights.trycloudflare.com/Compiles/EzWeb-V1.0.1.zip) |
+| V1.0.0 | [Download](https://relax-listed-nursing-flights.trycloudflare.com/Compiles/EzWeb-V1.0.0.zip) |
+
+---
+
+## Getting Started
+
+### 1 — Required file structure
+
+Your website folder must contain these five files:
+
+```
+my-site/
+├── index.html          ← Homepage content
+├── layout.html         ← Shared layout/template
+├── notFound.html       ← Custom 404 page
+├── accessDenied.html   ← Custom 403 page
+└── DeniedPaths.txt     ← Paths to block from public access
+```
+
+### 2 — Set up your layout
+
+`layout.html` holds everything that wraps every page: your `<head>` metadata (except `<title>`), navigation, footer, etc. Place the placeholder `{WebContent}` wherever your per-page content should be injected:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- shared styles, scripts, meta tags here -->
+</head>
+<body>
+  <nav><!-- your shared nav --></nav>
+
+  {WebContent}   <!-- page content is injected here -->
+
+  <footer><!-- your shared footer --></footer>
+</body>
+</html>
+```
+
+### 3 — Write your pages
+
+Each page file only needs a `<head>` tag (for its own `<title>`) and its body content — no `<html>` or `<body>` wrappers needed:
+
+```html
+<head>
+  <title>About - My Site</title>
+</head>
+
+<h1>About Us</h1>
+<p>Welcome to my site!</p>
+```
+
+### 4 — Override the layout (optional)
+
+To serve a file **without** wrapping it in `layout.html`, simply omit the `.html` extension from the filename. EzWeb will serve it as-is.
+
+### 5 — Restrict access
+
+Add file paths (one per line) to `DeniedPaths.txt` to block those paths from being served to visitors:
+
+```
+/DeniedPaths.txt
+/admin/secret.html
+/internal/config
+```
+
+Requests to a denied path are redirected to `accessDenied.html`.
+
+---
+
+## Running the Server
+
+1. Launch **EzWeb** as Administrator.
+2. Select your website folder using the folder browser.
+3. Set your desired port number.
+4. Click **Start** — EzWeb will open your site in the browser automatically.
+5. Click **Stop** when done.
+
+---
+
+## How It Works
+
+EzWeb uses `System.Net.HttpListener` to handle incoming requests. For each `.html` request it:
+
+1. Reads `layout.html`
+2. Reads the target page file
+3. Replaces `{WebContent}` in the layout with the page content
+4. Serves the combined result
+
+Non-HTML files (images, CSS, JS, etc.) are served as raw bytes. Missing pages fall back to `notFound.html` with a `404` status code.
+
+---
+
+## Source Code
+
+The full C# source is available on the [EzWeb website](https://relax-listed-nursing-flights.trycloudflare.com/source). Contributions are open.
+
+---
+
+## Credits
+
+| Role | Credit |
+|------|--------|
+| Code & Art/Media | [Akumarin Kukino](https://akumarin.neocities.org/) |
+| Publisher | Megamer Studios |
+
+---
+
+<div align="center">
+
+© 2026 Megamer Studios — EzWeb · All code and art/media by Akumarin Kukino
+
+*[Just use HTML.](https://justfuckingusehtml.com/)*
+
+</div>
