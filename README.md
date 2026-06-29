@@ -1,6 +1,6 @@
 <div align="center">
 
-# EzWeb
+<img src="/EzWebBanner.png" />
 
 **Web hosting done simple.**
 
