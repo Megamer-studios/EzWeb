@@ -6,10 +6,10 @@
 
 *A lightweight Windows hosting tool that lets developers share a single layout across plain HTML websites.*
 
-[![License](https://img.shields.io/badge/license-Open%20Source-brightgreen)](https://relax-listed-nursing-flights.trycloudflare.com/source)
-[![Version](https://img.shields.io/badge/version-1.0.1-blue)](https://relax-listed-nursing-flights.trycloudflare.com/Compiles/EzWeb-V1.0.1.zip)
-[![Contributions](https://img.shields.io/badge/contributions-open-orange)](https://relax-listed-nursing-flights.trycloudflare.com/source)
-[![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)](https://relax-listed-nursing-flights.trycloudflare.com/downloads)
+[![License](https://img.shields.io/badge/license-Open%20Source-brightgreen)](https://ezweb.aquaweb.cc/source)
+[![Version](https://img.shields.io/badge/version-1.0.1-blue)](https://ezweb.aquaweb.cc/EzWeb-V1.0.1.zip)
+[![Contributions](https://img.shields.io/badge/contributions-open-orange)](https://ezweb.aquaweb.cc/source)
+[![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)](https://ezweb.aquaweb.cc/downloads)
 
 </div>
 
@@ -32,8 +32,8 @@ EzWeb is a Windows desktop tool that runs a local HTTP server, automatically inj
 
 | Version | Link |
 |---------|------|
-| **V1.0.1** *(Latest)* | [Download](https://relax-listed-nursing-flights.trycloudflare.com/Compiles/EzWeb-V1.0.1.zip) |
-| V1.0.0 | [Download](https://relax-listed-nursing-flights.trycloudflare.com/Compiles/EzWeb-V1.0.0.zip) |
+| **V1.0.1** *(Latest)* | [Download](https://ezweb.aquaweb.cc/EzWeb-V1.0.1.zip) |
+| V1.0.0 | [Download](https://ezweb.aquaweb.cc/EzWeb-V1.0.0.zip) |
 
 ---
 
@@ -129,7 +129,7 @@ Non-HTML files (images, CSS, JS, etc.) are served as raw bytes. Missing pages fa
 
 ## Source Code
 
-The full C# source is available on the [EzWeb website](https://relax-listed-nursing-flights.trycloudflare.com/source). Contributions are open.
+The full C# source is available on the [EzWeb website](https://ezweb.aquaweb.cc/source). Contributions are open.
 
 ---
 
