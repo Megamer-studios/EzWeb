@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>You need 3 main files.
+    <value>You need 5 main files.
 
 -index.html
 -layout.html
@@ -132,7 +132,8 @@ Inside page files (including not Found.html) start off by opening a &lt;head&gt;
 Outside of the head tag you can add, what you would normally add inside the &lt;body&gt; of that page.
 To override the layout, you can simply remove the "html" file extension from a page.
 To restrict users from accessing a file, you can add the path to a new line in "DeniedPaths.txt".
-In the "accessDenied.html" and "notFound.html" files you can define your own "page not found" and "access denied" pages.</value>
+In the "accessDenied.html" and "notFound.html" files you can define your own "page not found" and "access denied" pages.
+By default the "/EZcnsl" path will redirect to the output of your console. If you wish to disable it, you can deny access to the path.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

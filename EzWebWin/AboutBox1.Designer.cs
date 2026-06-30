@@ -100,7 +100,7 @@
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(361, 26);
             labelVersion.TabIndex = 0;
-            labelVersion.Text = "V1.0.1";
+            labelVersion.Text = "V1.0.2";
             labelVersion.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labelCopyright
@@ -139,7 +139,7 @@
             textBoxDescription.Size = new Size(361, 193);
             textBoxDescription.TabIndex = 23;
             textBoxDescription.TabStop = false;
-            textBoxDescription.Text = "EzWeb is a hosting tool, that allows developers to use a shared layout in plain HTML websites.\r\n";
+            textBoxDescription.Text = "EzWeb is a hosting tool, that allows developers to use a shared layout in plain HTML websites.\r\n\r\nhttps://ezweb.aquaweb.cc/\r\n";
             // 
             // okButton
             // 

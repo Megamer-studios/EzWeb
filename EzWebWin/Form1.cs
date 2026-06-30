@@ -70,6 +70,7 @@ namespace EzWebWin
                     string templatePath = Path.Combine(rootFolder, "layout.html");
                     string notFoundPath = Path.Combine(rootFolder, "notFound.html");
                     string accessDeniedPath = Path.Combine(rootFolder, "accessDenied.html");
+                    bool isConsole = false;
                     List<string> deniedPaths = new List<string>();
                     if (File.Exists(deniedPath))
                     {
@@ -79,7 +80,7 @@ namespace EzWebWin
 
 
 
-
+                   
 
 
 
@@ -92,6 +93,13 @@ namespace EzWebWin
                         {
                             targetFilePath = Path.Combine(rootFolder, "index.html");
                             targetedFilePath = targetFilePath;
+                        }
+                        else if (path == "/EZcnsl")
+                        {
+                            targetFilePath = Path.Combine(rootFolder, "index.html");
+                            targetedFilePath = targetFilePath;
+                            isConsole = true;
+                            
                         }
                         else if (path == "/DeniedPaths.txt")
                         {
@@ -239,7 +247,14 @@ namespace EzWebWin
                    
                     }
 
+                    if (isConsole)
+                    {
+                        webContent = textBox1.Text.Replace("\n", "<br>");
+                        buffer = System.Text.Encoding.UTF8.GetBytes(webContent);
+                        response.ContentType = "text/html";
 
+
+                    }
 
                     //string currentPath = Path.Combine(folderBrowserDialog1.SelectedPath, "/" + path.TrimStart('/'));
                     //newLine(currentPath);

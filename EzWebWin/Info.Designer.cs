@@ -44,6 +44,7 @@
             textBox1.Size = new Size(874, 310);
             textBox1.TabIndex = 0;
             textBox1.Text = resources.GetString("textBox1.Text");
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Info
             // 
