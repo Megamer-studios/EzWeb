@@ -7,7 +7,7 @@
 *A lightweight Windows hosting tool that lets developers share a single layout across plain HTML websites.*
 
 [![License](https://img.shields.io/badge/license-Open%20Source-brightgreen)](https://ezweb.aquaweb.cc/source)
-[![Version](https://img.shields.io/badge/version-1.0.2-blue)](https://ezweb.aquaweb.cc/compiles/EzWeb-V1.0.2.zip)
+[![Version](https://img.shields.io/badge/version-1.0.3-blue)](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.3.zip)
 [![Contributions](https://img.shields.io/badge/contributions-open-orange)](https://ezweb.aquaweb.cc/source)
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)](https://ezweb.aquaweb.cc/downloads)
 
