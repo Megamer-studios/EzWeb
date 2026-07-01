@@ -30,11 +30,23 @@ EzWeb is a Windows desktop tool that runs a local HTTP server, automatically inj
 
 ## Download
 
+### GUI (Win)
 | Version | Link |
 |---------|------|
-| **V1.0.2** *(Latest)* | [Download](https://ezweb.aquaweb.cc/compiles/EzWeb-V1.0.2.zip) |
-| V1.0.1| [Download](https://ezweb.aquaweb.cc/compiles/EzWeb-V1.0.1.zip) |
-| V1.0.0 | [Download](https://ezweb.aquaweb.cc/compiles/EzWeb-V1.0.0.zip) |
+| **V1.0.3** *(Latest)* | [Download](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.3.zip) |
+| V1.0.2| [Download](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.2.zip) |
+| V1.0.1| [Download](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.1.zip) |
+| V1.0.0 | [Download](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.0.zip) |
+
+### CLI (Win)
+| Version | Link |
+|---------|------|
+| **V1.0.1** *(Latest)* | [Download](https://ezweb.aquaweb.cc/Compiles/CLI/EzWebCLI-Win-V1.0.1.zip) |
+
+### CLI (Linux)
+| Version | Link |
+|---------|------|
+| **V1.0.1** *(Latest)* | [Download](https://ezweb.aquaweb.cc/Compiles/CLI/EzWebCLI-Lin-V1.0.1.zip) |
 
 ---
 
