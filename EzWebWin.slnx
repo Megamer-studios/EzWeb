@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="../EzWebUni/EzWebUni/EzWebUni.csproj" />
   <Project Path="EzWebWin/EzWebWin.csproj" />
+  <Project Path="EzWinCLI/EzWinCLI.csproj" Id="6eac7dad-4be8-41d2-aa1d-9362b4dfc7e1" />
 </Solution>

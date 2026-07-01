@@ -41,6 +41,7 @@
             menuStrip1 = new MenuStrip();
             basicTutorialToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
+            textBox3 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -84,7 +85,7 @@
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(307, 397);
+            textBox1.Size = new Size(307, 362);
             textBox1.TabIndex = 5;
             // 
             // button2
@@ -156,12 +157,22 @@
             aboutToolStripMenuItem.Text = "About";
             aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
+            // textBox3
+            // 
+            textBox3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox3.Location = new Point(213, 402);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(307, 27);
+            textBox3.TabIndex = 11;
+            textBox3.KeyPress += textBox3_KeyPress;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(532, 443);
+            Controls.Add(textBox3);
             Controls.Add(pictureBox1);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -199,5 +210,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem basicTutorialToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
+        private TextBox textBox3;
     }
 }
