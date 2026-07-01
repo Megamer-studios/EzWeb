@@ -7,7 +7,7 @@
 *A lightweight Windows hosting tool that lets developers share a single layout across plain HTML websites.*
 
 [![License](https://img.shields.io/badge/license-Open%20Source-brightgreen)](https://ezweb.aquaweb.cc/source)
-[![Version](https://img.shields.io/badge/version-1.0.1-blue)](https://ezweb.aquaweb.cc/EzWeb-V1.0.1.zip)
+[![Version](https://img.shields.io/badge/version-1.0.2-blue)](https://ezweb.aquaweb.cc/compiles/EzWeb-V1.0.2.zip)
 [![Contributions](https://img.shields.io/badge/contributions-open-orange)](https://ezweb.aquaweb.cc/source)
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)](https://ezweb.aquaweb.cc/downloads)
 
@@ -32,8 +32,9 @@ EzWeb is a Windows desktop tool that runs a local HTTP server, automatically inj
 
 | Version | Link |
 |---------|------|
-| **V1.0.1** *(Latest)* | [Download](https://ezweb.aquaweb.cc/EzWeb-V1.0.1.zip) |
-| V1.0.0 | [Download](https://ezweb.aquaweb.cc/EzWeb-V1.0.0.zip) |
+| **V1.0.2** *(Latest)* | [Download](https://ezweb.aquaweb.cc/compiles/EzWeb-V1.0.2.zip) |
+| V1.0.1| [Download](https://ezweb.aquaweb.cc/compiles/EzWeb-V1.0.1.zip) |
+| V1.0.0 | [Download](https://ezweb.aquaweb.cc/compiles/EzWeb-V1.0.0.zip) |
 
 ---
 
