@@ -13,7 +13,7 @@ namespace EzWinCLI
             bool hosting = false;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("======================================================\r\n___________        __      _______________________ \r\n\\_   _____/_______/  \\    /  \\_   _____/\\______   \\\r\n |    __)_\\___   /\\   \\/\\/   /|    __)_  |    |  _/\r\n |        \\/    /  \\        / |        \\ |    |   \\\r\n/_______  /_____ \\  \\__/\\  / /_______  / |______  /\r\n        \\/      \\/       \\/          \\/         \\/ \r\n======================================================");
-            Console.WriteLine("Welcome to EzWeb! \nV1.0.1(CLI)");
+            Console.WriteLine("Welcome to EzWeb! \nV1.1.0(CLI)");
             Console.WriteLine("======================================================\r\n\r\nEzWeb is a hosting tool, that allows developers to use\r\na shared layout in plain HTML websites.\r\n\r\n======================================================");
             Console.ResetColor();
             Console.WriteLine("Please input the desired PORT!");
