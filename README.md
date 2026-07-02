@@ -7,7 +7,7 @@
 *A lightweight Windows hosting tool that lets developers share a single layout across plain HTML websites.*
 
 [![License](https://img.shields.io/badge/license-Open%20Source-brightgreen)](https://ezweb.aquaweb.cc/source)
-[![Version](https://img.shields.io/badge/version-1.0.3-blue)](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.3.zip)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue)](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.1.0.zip)
 [![Contributions](https://img.shields.io/badge/contributions-open-orange)](https://ezweb.aquaweb.cc/source)
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)](https://ezweb.aquaweb.cc/downloads)
 
@@ -33,7 +33,8 @@ EzWeb is a Windows desktop tool that runs a local HTTP server, automatically inj
 ### GUI (Win)
 | Version | Link |
 |---------|------|
-| **V1.0.3** *(Latest)* | [Download](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.3.zip) |
+| **V1.1.0** *(Latest)* | [Download](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.1.0.zip) |
+| V1.0.3 | [Download](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.3.zip) |
 | V1.0.2| [Download](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.2.zip) |
 | V1.0.1| [Download](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.1.zip) |
 | V1.0.0 | [Download](https://ezweb.aquaweb.cc/Compiles/EzWeb-V1.0.0.zip) |
@@ -41,12 +42,14 @@ EzWeb is a Windows desktop tool that runs a local HTTP server, automatically inj
 ### CLI (Win)
 | Version | Link |
 |---------|------|
-| **V1.0.1** *(Latest)* | [Download](https://ezweb.aquaweb.cc/Compiles/CLI/EzWebCLI-Win-V1.0.1.zip) |
+| **V1.1.0** *(Latest)* | [Download](https://ezweb.aquaweb.cc/Compiles/CLI/EzWebCLI-Win-V1.1.0.zip) |
+| V1.0.1| [Download](https://ezweb.aquaweb.cc/Compiles/CLI/EzWebCLI-Win-V1.0.1.zip) |
 
 ### CLI (Linux)
 | Version | Link |
 |---------|------|
-| **V1.0.1** *(Latest)* | [Download](https://ezweb.aquaweb.cc/Compiles/CLI/EzWebCLI-Lin-V1.0.1.zip) |
+| **V1.1.0** *(Latest)* | [Download](https://ezweb.aquaweb.cc/Compiles/CLI/EzWebCLI-Lin-V1.1.0.zip) |
+| V1.0.1| [Download](https://ezweb.aquaweb.cc/Compiles/CLI/EzWebCLI-Lin-V1.0.1.zip) |
 
 ---
 
